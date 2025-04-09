@@ -10,6 +10,6 @@ export const UNIT_KEYWORDS = {
   "Network Distribution Systems": ["delivery", "distribution", "network", "pressure"],
   "Regulatory Compliance & Risk": ["compliance", "regulation", "risk", "score"],
   "Retail": ["mdms", "retail"],
-  "Strategic Finance & Funding": ["capex", "cost", "financial", "funding", "opex"],
+  "Strategic Finance & Funding": ["budget", "capex", "cost", "financial", "funding", "opex"],
   "Wastewater Treatment Operations": ["environment", "sewage", "treatment", "waste"],
 };
