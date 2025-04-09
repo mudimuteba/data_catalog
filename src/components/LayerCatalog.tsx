@@ -2,6 +2,7 @@ import React from 'react';
 import { ChevronDown, ChevronRight, Database } from 'lucide-react';
 import { CatalogData } from '../types/catalog';
 import { TableDetails } from './TableDetails';
+import './navigation.css';
 
 interface LayerCatalogProps {
   name: string;
@@ -12,9 +13,9 @@ export const LayerCatalog: React.FC<LayerCatalogProps> = ({ name, data }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   return (
-    <div className="border rounded-lg mb-4 bg-white shadow-sm hover:shadow-md transition-shadow">
+    <div className="border rounded-lg mb-4 bg-white shadow-sm hover:shadow-md transition-shadow" id={`layer-${name.toLowerCase().replace(' ', '-')}`}>
       <button
-        className="w-full px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+        className="w-full px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between hover:bg-gray-50 transition-colors sticky-layer-header"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex items-center gap-2 sm:gap-3 flex-wrap">

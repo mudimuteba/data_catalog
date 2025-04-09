@@ -1,7 +1,7 @@
 import React from 'react';
 import { LayerCatalog } from './components/LayerCatalog';
 import { BusinessUnitFilter } from './components/BusinessUnitFilter';
-import { Table } from './types/catalog';
+import { ScrollToTop } from './components/ScrollToTop';
 import { UNIT_KEYWORDS } from './constants/businessUnits';
 
 // Import JSON data
@@ -49,6 +49,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      <ScrollToTop />
       <div className="container mx-auto py-4 sm:py-8 px-3 sm:px-4">
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-8 border-b pb-3 sm:pb-4">Data Catalog</h1>
         

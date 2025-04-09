@@ -20,7 +20,6 @@ export const BusinessUnitFilter: React.FC<BusinessUnitFilterProps> = ({
 
   return (
     <div className="border rounded-lg mb-4 sm:mb-6 bg-white shadow-sm p-3 sm:p-6">
-      <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-4">Business Units</h2>
       <div className="flex flex-wrap gap-2 sm:gap-3 overflow-x-auto pb-1">
         {Object.keys(UNIT_KEYWORDS).map((unit) => (
           <button

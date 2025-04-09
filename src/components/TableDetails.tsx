@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown, ChevronRight, Database, Table as TableIcon, Columns } from 'lucide-react';
 import { Table, Column } from '../types/catalog';
+import './navigation.css';
 
 interface TableDetailsProps {
   table: Table;
@@ -10,9 +11,9 @@ export const TableDetails: React.FC<TableDetailsProps> = ({ table }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   return (
-    <div className="border rounded-lg mb-2 bg-white hover:shadow-sm transition-all">
+    <div className="border rounded-lg mb-2 bg-white hover:shadow-sm transition-all" id={`table-${table.schema_name}-${table.table_name}`}>
       <button
-        className="w-full px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
+        className="w-full px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between hover:bg-gray-50 transition-colors sticky-table-header"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
@@ -35,11 +36,11 @@ export const TableDetails: React.FC<TableDetailsProps> = ({ table }) => {
           {table.comment && (
             <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 p-1.5 sm:p-2 bg-gray-50 rounded">{table.comment}</p>
           )}
-          <div className="space-y-1.5 sm:space-y-2">
-            {table.columns.map((column) => (
+          <div className="border border-gray-200 rounded overflow-hidden">
+            {table.columns.map((column, index) => (
               <div
                 key={column.column_name}
-                className="flex items-start gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded hover:bg-gray-50 transition-colors"
+                className={`flex items-start gap-1.5 sm:gap-2 p-1.5 sm:p-2 hover:bg-gray-50 transition-colors ${index !== table.columns.length - 1 ? 'border-b border-gray-200' : ''}`}
               >
                 <Columns className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 mt-1 flex-shrink-0" />
                 <div className="w-full">
@@ -53,10 +54,12 @@ export const TableDetails: React.FC<TableDetailsProps> = ({ table }) => {
                         Required
                       </span>
                     )}
+                    {column.comment && (
+                      <span className="text-xs sm:text-sm text-gray-600 ml-1.5 sm:ml-2">
+                        — {column.comment}
+                      </span>
+                    )}
                   </div>
-                  {column.comment && (
-                    <p className="text-xs sm:text-sm text-gray-600 mt-0.5 sm:mt-1 ml-0.5 sm:ml-1">{column.comment}</p>
-                  )}
                 </div>
               </div>
             ))}
