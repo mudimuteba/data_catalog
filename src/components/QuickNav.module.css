@@ -1,0 +1,49 @@
+/* QuickNav component styles */
+
+.container {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  position: sticky;
+  top: 20px;
+  background-color: rgb(221, 26, 26);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+/* Remove .quick-nav from navigation.css if it's not used elsewhere */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.toggleButton {
+  color: #6b7280;
+}
+
+.toggleButton:hover {
+  color: #374151;
+}
+
+.layerItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.layerItem:hover {
+  background-color: #f9fafb;
+}
