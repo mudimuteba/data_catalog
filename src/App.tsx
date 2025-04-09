@@ -52,7 +52,7 @@ function App() {
         'columns.column_name',
         'columns.comment',
       ],
-      threshold: 0.3,
+      threshold: 0.2,
     });
   }, [bronzeRawTables, bronzeCuratedTables, silverTables]);
 
